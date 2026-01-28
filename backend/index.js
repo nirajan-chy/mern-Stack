@@ -4,10 +4,17 @@ import { productRouter } from "./routes/product.route.js";
 import { orderRouter } from "./routes/order.route.js";
 import { userRouter } from "./routes/user.route.js";
 import { fileRouter } from "./routes/file.route.js";
+import cors from "cors";
 
 const app = express();
 app.use(express.json());
 app.use(express.static("./upload"));
+
+app.use(
+  cors({
+    origin: "http://localhost:5174",
+  }),
+);
 
 connectDB();
 app.listen(8080, () => {
