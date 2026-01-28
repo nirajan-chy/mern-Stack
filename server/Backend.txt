@@ -1,0 +1,12 @@
+//GIT COMMAND
+git add .
+git commit -m "Commit message j lekhda nh huncha but meaningful"
+git push origin main 
+
+
+Database => CRUD operation////
+
+C => Create => //Kunei data lai db ma store garney bhaye .post bhanney method cha => POST
+R => Read => //Kunei data lai read garnu parey .get bhanney method cha => GET
+U => Update => //Kunei data lai update garnu parey .patch / .put method cha => PATCH / PUT
+D => Delete => //Kunei data lai delete garnu parey .delete method cha => DELETE

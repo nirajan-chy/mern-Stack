@@ -1,0 +1,5 @@
+Schema => data k k halni bhaneyra plan schema ma garcham
+Model => 
+Controller => logic build garney kaam
+Routes => path chutaucha => /blog k logic lagauney , /user ma k logic lagauney
+index.js => routes last ma call garcham
