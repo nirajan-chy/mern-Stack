@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../../src/App.css";
 
-// input field text , password , email , file => onchange
-// checkbox => onchange
-// button type => submit
 const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -13,10 +10,12 @@ const Register = () => {
   const handleformSubmit = async e => {
     e.preventDefault();
     try {
-      const response = await axios({
-        url: "http://localhost:8000/user/register",
-        method: "POST",
+      const response = await axios.post("http://localhost:8080/user/register", {
+        username,
+        email,
+        password,
       });
+      console.log(response.data);
     } catch (error) {
       console.log(error.message);
     }
@@ -24,19 +23,36 @@ const Register = () => {
 
   return (
     <div className="form">
-      <form action="">
+      <form onSubmit={handleformSubmit}>
         <h1>Register</h1>
 
-        {/* for name */}
-        <input type={username} placeholder="username" />
+        {/* username */}
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={e => setUsername(e.target.value)}
+        />
         <br />
         <br />
-        {/* for email */}
-        <input type={email} placeholder="email" />
+
+        {/* email */}
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+        />
         <br />
         <br />
-        {/* for password */}
-        <input type={password} placeholder="password" />
+
+        {/* password */}
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={e => setPassword(e.target.value)}
+        />
         <br />
         <br />
 
